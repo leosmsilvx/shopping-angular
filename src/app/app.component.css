@@ -6,6 +6,7 @@
 }
 
 .text-footer{
+    text-decoration: none;
     text-align: center;
     font-size: 12px;
     font-family: system-ui;
