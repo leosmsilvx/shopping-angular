@@ -1,1 +1,139 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    --bg-color: #1f1f1f;
+    --nav-bg: #0d0d0d;
+    --hover-link: #2c2c2c;
+    --active-color: #6601ca;
+    --active-color-lg: #8000ff;
+    --txt-color: #eee;
+    --nav-hover: #161616;
+    --danger-color: #dc3545;
+    --green-color: #198754;
+    --blue-color: #0d6efd;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    color: var(--txt-color);
+    background-color: var(--bg-color);
+}
+
+.no-deco{
+    text-decoration: none;
+    color: var(--text-color);
+    cursor: default;
+}
+
+.no-deco:hover{
+    text-decoration: none;
+    color: var(--text-color);
+    cursor: default;
+}
+
+.button-active{
+    margin-top: 20px;
+    background-color: var(--active-color);
+    border: 0;
+    color: var(--text-color);
+    padding: 8px;
+    border-radius: 8px;
+    transition: all .5s;
+}
+
+.button-active:hover{
+    background-color: var(--active-color-lg);
+}
+
+.button-danger{
+    margin-top: 20px;
+    background-color: var(--danger-color);
+    border: 0;
+    color: var(--text-color);
+    padding: 8px;
+    border-radius: 8px;
+    transition: all .5s;
+}
+
+.button-danger:hover{
+    background-color: var(--danger-color);
+}
+
+.button-green{
+    margin-top: 20px;
+    background-color: var(--green-color);
+    border: 0;
+    color: var(--text-color);
+    padding: 8px;
+    border-radius: 8px;
+    transition: all .5s;
+}
+
+.button-green:hover{
+    background-color: var(--green-color);
+}
+
+.button-blue{
+    margin-top: 20px;
+    background-color: var(--blue-color);
+    border: 0;
+    color: var(--text-color);
+    padding: 8px;
+    border-radius: 8px;
+    transition: all .5s;
+}
+
+.button-blue:hover{
+    background-color: var(--blue-color);
+}
+
+.bg-form{
+    color: var(--text-color);
+    background-color: var(--nav-bg);
+    border-color: var(--hover-link);
+}
+
+.bg-form:focus{
+    background-color: var(--nav-hover);
+    border-color: var(--hover-link);
+    color: var(--text-color);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.dropdown-bg{
+    margin: 0;
+    padding: 0;
+    border: solid 1px white;
+    background-color: #080808;
+    text-align: center;
+}
+
+.dropdownItem{
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.dropdownItem:hover{
+    color: var(--active-color)
+}
+
+.li-separation{
+    border-bottom: solid 1px grey;
+}
+
+li:hover{
+    background-color: var(--nav-hover);
+}
+
+li{
+    border-radius: 5px;
+    padding: 10px;
+}

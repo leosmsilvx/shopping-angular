@@ -1,0 +1,14 @@
+.recipe-detail{
+    border-radius: 20px;
+    padding: 30px;
+    background-color: var(--nav-bg);
+}
+
+img{
+    margin-block: 15px;
+    border-radius: 20px;
+}
+
+h3{
+    text-decoration: underline;
+}

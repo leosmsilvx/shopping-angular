@@ -1,0 +1,10 @@
+.ingrediente-item{
+    border: 1px solid rgb(41, 41, 41);
+    border-top: 0;
+    color: var(--text-color);
+    background-color: var(--nav-bg);
+}
+
+.ingrediente-item:hover{
+    background-color: var(--nav-hover);
+}

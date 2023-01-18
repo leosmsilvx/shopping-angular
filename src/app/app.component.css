@@ -1,0 +1,13 @@
+.footer{
+    width: 90%;
+    margin-inline: 5%;
+    position: absolute;
+    bottom: 0;
+}
+
+.text-footer{
+    text-align: center;
+    font-size: 12px;
+    font-family: system-ui;
+    color: gray;
+}

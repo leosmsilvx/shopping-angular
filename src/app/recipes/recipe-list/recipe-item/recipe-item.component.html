@@ -1,0 +1,17 @@
+<div class="recipe-item" >
+    <a class="no-deco recipe-item" (click)="onRecipeClick()">
+        <div class="p-2 receita">
+            <h4 class="recipe-title">
+                Receita de {{receita.name}}
+            </h4>
+            <div class="desc-img">
+                <p class="recipe-desc">
+                    Descrição: {{receita.description}}
+                </p>
+                <span>
+                    <img src="{{receita.imgPath}}" alt="{{receita.name}}" class="rounded recipe-img" style="max-height: 50px">
+                </span>
+            </div>                
+        </div>
+    </a>
+</div> 

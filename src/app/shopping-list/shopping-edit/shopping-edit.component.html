@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-12">
+        <form>
+            <div class="row">
+                <div class="col-5 form-group">
+                    <label for="name">Nome</label>
+                    <!-- #nameIngrediente - Referencia para pegar valor pelo TS -->
+                    <!-- <input type="text" id="name" class="form-control bg-form shadow-none" #nameIngrediente> -->
+                    <input type="text" id="name" class="form-control bg-form shadow-none" #nameIngredient>
+                </div>
+                <div class="col-2 form-group">
+                    <label for="amount">Quantidade</label>
+                    <!-- #qntIngrediente - Referencia para pegar valor pelo TS -->
+                    <!-- <input type="number" id="amount" class="form-control bg-form shadow-none" #qntIngrediente> -->
+                    <input type="number" id="amount" class="form-control bg-form shadow-none" #qntIngredient>
+                </div>                 
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <button class="button-green" type="submit" (click)="addIngredient()">Adicionar</button>
+                    <button class="button-danger mx-3" type="button">Deletar</button>
+                    <button class="button-blue" type="button">Limpar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

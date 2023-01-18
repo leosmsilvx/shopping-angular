@@ -1,0 +1,36 @@
+.navbar{
+    background-color: var(--nav-bg);
+    color: var(--text-color)
+}
+
+.nav-buttons{
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link{
+    padding: 8px;
+    border-radius: 20px;
+    transition: all .5s;
+}
+
+.nav-link:hover{
+    background-color: var(--hover-link);
+    color: var(--active-color);
+    cursor: pointer;
+}
+
+.title-nav{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.icon-link{
+    vertical-align:middle;
+    margin-right: 5px;
+}
+
+.icon-hover{
+    height: 100%;
+    border-radius: 15px;
+}

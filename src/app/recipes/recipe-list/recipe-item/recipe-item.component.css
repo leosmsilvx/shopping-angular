@@ -1,0 +1,33 @@
+.receita{
+    cursor: pointer;
+}
+
+.recipe-item{
+    background-color: var(--nav-bg);
+    border-radius: 15px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all .7s;
+    margin-bottom: 12px;
+}
+
+.recipe-item:hover{
+    background-color: var(--nav-hover);
+}
+
+.recipe-title{
+    text-decoration: underline;
+    color: var(--text-color);
+    margin-left: 5px;
+}
+
+.desc-img{
+    margin-left: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.recipe-img{
+    max-width: 100px;
+    max-height: 140px;
+}

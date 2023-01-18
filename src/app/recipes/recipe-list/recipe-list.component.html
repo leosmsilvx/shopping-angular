@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-12">
+        <button class="button-active">
+            Nova receita
+        </button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-12 recipe-list">              
+        <app-recipe-item
+        *ngFor="let recipe of recipes"
+        [item]="recipe"
+        (recipeSelected)="showDetailRecipe(recipe)"></app-recipe-item>
+    </div>
+</div>

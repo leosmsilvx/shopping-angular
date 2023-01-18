@@ -1,0 +1,30 @@
+<nav class="navbar sticky-top">
+    <div class="container">
+      <a class="no-deco title-nav">
+        Angular Shopping
+      </a>
+      <div class="nav-buttons">
+        <a class="nav-link" (click)="onSelect('recipe')">
+          Receitas
+        </a>
+        <a class="nav-link" (click)="onSelect('shopping')">
+            Lista de compras
+        </a>
+        <div class="btn-group">
+          <a class="nav-link icon-hover dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="material-symbols-outlined icon-link">
+              settings
+            </span>
+          </a>
+          <ul class="dropdown-menu dropdown-bg">
+              <li class="li-separation">
+                  <a href="#" class="dropdownItem">Salvar Informações</a>
+              </li>
+              <li class="li-separation">
+                  <a href="#" class="dropdownItem">Atualizar Informações</a>
+              </li>
+          </ul>
+       </div>                  
+      </div>      
+    </div>
+</nav>
