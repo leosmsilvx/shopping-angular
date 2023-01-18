@@ -1,13 +1,16 @@
 .footer{
     width: 90%;
     margin-inline: 5%;
+    padding-top: 10px;
     position: absolute;
     bottom: 0;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid gray;
 }
 
 .text-footer{
     text-decoration: none;
-    text-align: center;
     font-size: 12px;
     font-family: system-ui;
     color: gray;
