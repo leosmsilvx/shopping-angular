@@ -17,7 +17,6 @@
 .nav-link:hover{
     background-color: var(--hover-link);
     color: var(--active-color);
-    cursor: pointer;
 }
 
 .title-nav{
@@ -33,4 +32,10 @@
 .icon-hover{
     height: 100%;
     border-radius: 15px;
+}
+
+.active-nav{
+    background-color: var(--hover-link);
+    height: 100%;
+    border-radius: 20px;
 }

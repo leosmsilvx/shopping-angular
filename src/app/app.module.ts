@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -9,8 +11,13 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { FormsModule } from '@angular/forms';
 import { ShoppingService } from './services/shopping.service';
+
+const appRoutes: Routes = [
+  {path: '', component: RecipesComponent},
+  {path: 'receitas', component: RecipesComponent},
+  {path: 'listaDeCompras', component: ShoppingListComponent}
+];
 
 @NgModule({
   declarations: [
@@ -25,7 +32,8 @@ import { ShoppingService } from './services/shopping.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ShoppingService],
   bootstrap: [AppComponent]

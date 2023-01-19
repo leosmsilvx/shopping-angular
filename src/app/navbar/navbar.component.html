@@ -4,13 +4,17 @@
         Angular Shopping
       </a>
       <div class="nav-buttons">
-        <a class="nav-link" (click)="onSelect('recipe')">
-          Receitas
-        </a>
-        <a class="nav-link" (click)="onSelect('shopping')">
+        <div routerLinkActive="active-nav">
+          <a class="nav-link" routerLink="/receitas">
+            Receitas
+          </a>
+        </div>
+        <div routerLinkActive="active-nav">
+          <a class="nav-link" routerLink="/listaDeCompras">
             Lista de compras
-        </a>
-        <div class="btn-group">
+          </a>
+        </div> 
+        <div class="btn-group" style="cursor: pointer;">
           <a class="nav-link icon-hover dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="material-symbols-outlined icon-link">
               settings

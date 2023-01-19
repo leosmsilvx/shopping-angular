@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,10 +7,13 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  @Output() optionSelected = new EventEmitter<string>();
-
-  onSelect(option: string){
-     this.optionSelected.emit(option);
+  //routing from ts
+  constructor(private router: Router){}
+  
+  functionToLoad(){
+    //funções legais no .router
+    //Ex: isActive
+    this.router.navigate(['/path'])
   }
 
 }

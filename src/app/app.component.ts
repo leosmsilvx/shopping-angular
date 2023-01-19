@@ -6,10 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  activeOption = "recipe";
-
-  onChangeOption(option: string){
-    this.activeOption = option;
-  }
 
 }
