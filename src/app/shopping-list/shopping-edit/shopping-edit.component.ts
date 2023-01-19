@@ -21,10 +21,12 @@ export class ShoppingEditComponent {
     const novoNome = this.nameIngredienteRef.nativeElement.value.trim(); 
     var novaQnt = this.qntIngredienteRef.nativeElement.value;
 
-    //ParseInt pq o valor do input vem como string
+    //trim remove NaN
     if(novaQnt.trim() == ""){
       novaQnt = 1;
     }
+
+    //ParseInt pq o valor do input vem como string
     const newIngredient = new Ingredient(novoNome, parseInt(novaQnt));
 
     this.shoppingService.addIngredient(newIngredient);
