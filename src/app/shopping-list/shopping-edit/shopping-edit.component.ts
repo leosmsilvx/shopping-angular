@@ -18,10 +18,13 @@ export class ShoppingEditComponent {
 
   addIngredient(){
     // Pegar o elemento por referencia - .value para pegar o valor    
-    const novoNome = this.nameIngredienteRef.nativeElement.value;
-    const novaQnt = this.qntIngredienteRef.nativeElement.value;
+    const novoNome = this.nameIngredienteRef.nativeElement.value.trim(); 
+    var novaQnt = this.qntIngredienteRef.nativeElement.value;
 
     //ParseInt pq o valor do input vem como string
+    if(novaQnt.trim() == ""){
+      novaQnt = 1;
+    }
     const newIngredient = new Ingredient(novoNome, parseInt(novaQnt));
 
     this.shoppingService.addIngredient(newIngredient);
