@@ -1,9 +1,9 @@
 <app-navbar (optionSelected)="onChangeOption($event)"></app-navbar>
-<div class="container">
+<div class="container content">
   <app-recipes *ngIf="activeOption === 'recipe'"></app-recipes>
   <app-shopping-list *ngIf="activeOption === 'shopping'"></app-shopping-list>
+  <div class="push"></div>
 </div>
-<div class="footer">
-  <hr>
+<footer class="footer-t">
   <a class="text-footer" target="_blank" href="https://leosmsilvx.github.io/">© leosmsilvx</a>
-</div>
+</footer>  

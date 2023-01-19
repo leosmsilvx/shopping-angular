@@ -1,9 +1,6 @@
-.footer{
+.footer-t{
     width: 90%;
     margin-inline: 5%;
-    padding-top: 10px;
-    position: absolute;
-    bottom: 0;
     display: flex;
     justify-content: center;
     border-top: 1px solid gray;
@@ -14,4 +11,17 @@
     font-size: 12px;
     font-family: system-ui;
     color: gray;
+}
+
+.content {
+    min-height: 90%;
+    margin: 0 auto -50px;
+}
+
+.footer, .push {
+    height: 50px;
+}
+
+.push{
+    margin-bottom: 50px;
 }

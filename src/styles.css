@@ -11,6 +11,11 @@
     --blue-color: #0d6efd;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+
 *{
     margin: 0;
     padding: 0;
