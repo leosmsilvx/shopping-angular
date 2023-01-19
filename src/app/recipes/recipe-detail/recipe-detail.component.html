@@ -15,8 +15,16 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
-            Ingredientes
+        <div class="col-12 mt-3">
+            <p class="bold">
+                Ingredientes:
+            </p>
+            <ul class="ul-list">
+                <li class="li-list"
+                *ngFor="let ingredient of recipe.ingredients">
+                    {{ingredient.name}} - {{ingredient.amount}}
+                </li>
+            </ul>            
         </div>
     </div>
     <div class="row">   
@@ -25,7 +33,7 @@
                 <button type="button" class="button-active dropdown-toggle" data-bs-toggle="dropdown">Gerenciar receita</button>
                 <ul class="dropdown-menu dropdown-bg">
                     <li class="li-separation">
-                        <a href="#" class="dropdownItem">Adicionar na lista</a>
+                        <a class="dropdownItem" style="cursor: pointer;" (click)="addOnSList(recipe.ingredients)">Adicionar na lista</a>
                     </li>
                     <li class="li-separation">
                         <a href="#" class="dropdownItem">Editar receita</a>

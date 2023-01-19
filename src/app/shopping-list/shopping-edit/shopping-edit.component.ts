@@ -1,4 +1,5 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef,  ViewChild } from '@angular/core';
+import { ShoppingService } from 'src/app/services/shopping.service';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 
 @Component({
@@ -11,8 +12,8 @@ export class ShoppingEditComponent {
   // Para pegar a referencia do DOM
   @ViewChild("nameIngredient") nameIngredienteRef!: ElementRef;
   @ViewChild("qntIngredient") qntIngredienteRef!: ElementRef;
- 
-  @Output() ingredientAdded = new EventEmitter<Ingredient>();
+
+  constructor(private shoppingService: ShoppingService) {}
   
 
   addIngredient(){
@@ -22,7 +23,7 @@ export class ShoppingEditComponent {
 
     const newIngredient = new Ingredient(novoNome, novaQnt);
 
-    this.ingredientAdded.emit(newIngredient);
+    this.shoppingService.addIngredient(newIngredient);
   }
 
 }

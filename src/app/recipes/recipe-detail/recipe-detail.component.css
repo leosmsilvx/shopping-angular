@@ -12,3 +12,12 @@ img{
 h3{
     text-decoration: underline;
 }
+
+.bold{
+    font-weight: 700;
+}
+
+.li-list{
+    margin: 0;
+    padding: 0;
+}
