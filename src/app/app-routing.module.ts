@@ -16,7 +16,7 @@ const appRoutes: Routes = [
         {path: ':id', component: RecipeDetailComponent},
         {path: ':id/edit', component: RecipeEditComponent}
     ]},
-    {path: 'listaDeCompras', component: ShoppingListComponent},
+    {path: 'lista', component: ShoppingListComponent},
     {path: 'not-found', component: NotFoundComponent},
     {path: '**', redirectTo: '/not-found'}
 ];
