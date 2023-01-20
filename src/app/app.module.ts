@@ -13,16 +13,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { ShoppingService } from './services/shopping.service';
 import { NotFoundComponent } from './not-found/not-found.component';
-
-const appRoutes: Routes = [
-  {path: '', component: RecipesComponent},
-  {path: 'receitas', component: RecipesComponent, children: [
-    {path: ':index', component: RecipeDetailComponent}
-  ]},
-  {path: 'listaDeCompras', component: ShoppingListComponent},
-  {path: 'not-found', component: NotFoundComponent},
-  {path: '**', redirectTo: '/not-found'}
-];
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +30,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule
   ],
   providers: [ShoppingService],
   bootstrap: [AppComponent]
