@@ -12,11 +12,16 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { ShoppingService } from './services/shopping.service';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const appRoutes: Routes = [
   {path: '', component: RecipesComponent},
-  {path: 'receitas', component: RecipesComponent},
-  {path: 'listaDeCompras', component: ShoppingListComponent}
+  {path: 'receitas', component: RecipesComponent, children: [
+    {path: ':index', component: RecipeDetailComponent}
+  ]},
+  {path: 'listaDeCompras', component: ShoppingListComponent},
+  {path: 'not-found', component: NotFoundComponent},
+  {path: '**', redirectTo: '/not-found'}
 ];
 
 @NgModule({
@@ -29,6 +34,7 @@ const appRoutes: Routes = [
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

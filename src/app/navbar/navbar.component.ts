@@ -14,6 +14,8 @@ export class NavbarComponent {
     //funções legais no .router
     //Ex: isActive
     this.router.navigate(['/path'])
+    //Vai para /path/id/edit?parametro=10#idUrl
+    //this.router.navigate(['/path', 'id', 'edit'], {queryParams: {parametro: '10'}, fragment: 'idUrl'})
   }
 
 }
