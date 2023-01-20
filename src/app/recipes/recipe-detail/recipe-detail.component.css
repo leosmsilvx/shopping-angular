@@ -1,6 +1,7 @@
 .recipe-detail{
     border-radius: 20px;
     padding: 30px;
+    padding-top: 10px;
     background-color: var(--nav-bg);
 }
 
@@ -20,4 +21,10 @@ h3{
 .li-list{
     margin: 0;
     padding: 0;
+}
+
+.flex-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }

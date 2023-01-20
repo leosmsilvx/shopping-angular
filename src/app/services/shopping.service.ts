@@ -31,12 +31,13 @@ export class ShoppingService{
         var itemIn = false;
         for(let i in ingredientsOut){
             for(let j in this.ingredients){
-                if(this.ingredients[j].name == ingredientsOut[i].name){
+                if(this.ingredients[j].name === ingredientsOut[i].name){
                     this.ingredients[j].amount = this.ingredients[j].amount + ingredientsOut[i].amount;
                     itemIn = true;
+                    console.log(ingredientsOut[i]);
                 }
             }
-            if(!itemIn){                    
+            if(!itemIn){                  
                 this.ingredients.push(ingredientsOut[i]);
             }
             

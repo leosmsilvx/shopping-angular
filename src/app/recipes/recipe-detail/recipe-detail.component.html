@@ -1,7 +1,29 @@
 <div class="recipe-detail">
     <div class="row">
-        <div class="col-12">
-            <h3>{{recipe.name}}</h3>
+        <div class="col-12 flex-button">
+            <div class="recipe-title">
+                <h3>{{recipe.name}}</h3>
+            </div>
+            <div class="recipe-buttons">
+                <button type="button" class="button-active mx-2 no-border" (click)="addOnSList(recipe.ingredients)" [routerLink]="['/lista', 'item-adicionado']">
+                    <span class="icon-link">
+                        Adicionar na lista
+                    </span>
+                </button>
+                <button type="button" class="button-active dropdown-toggle no-border" data-bs-toggle="dropdown">
+                    <span class="material-symbols-outlined icon-link">
+                        settings
+                    </span>
+                </button>
+                <ul class="dropdown-menu dropdown-bg">
+                    <li class="li-separation">
+                        <a style="cursor: pointer;"  class="dropdownItem" (click)="editRecipe()">Editar receita</a>
+                    </li>
+                    <li>
+                        <a style="cursor: pointer;"  class="dropdownItem">Deletar receita</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -29,20 +51,6 @@
     </div>
     <div class="row">   
         <div class="col-12">
-             <div class="btn-group">
-                <button type="button" class="button-active dropdown-toggle" data-bs-toggle="dropdown">Gerenciar receita</button>
-                <ul class="dropdown-menu dropdown-bg">
-                    <li class="li-separation">
-                        <a class="dropdownItem" style="cursor: pointer;" (click)="addOnSList(recipe.ingredients)">Adicionar na lista</a>
-                    </li>
-                    <li class="li-separation">
-                        <a style="cursor: pointer;"  class="dropdownItem" (click)="editRecipe()">Editar receita</a>
-                    </li>
-                    <li>
-                        <a style="cursor: pointer;"  class="dropdownItem">Deletar receita</a>
-                    </li>
-                </ul>
-             </div>
         </div>
     </div>
 </div>

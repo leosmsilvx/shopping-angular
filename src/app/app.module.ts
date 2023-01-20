@@ -16,6 +16,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NoRecipeSelectedComponent } from './recipes/no-recipe-selected/no-recipe-selected.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { ItemAddComponent } from './shopping-list/item-add/item-add.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
     NotFoundComponent,
     NoRecipeSelectedComponent,
     RecipeEditComponent,
+    ItemAddComponent,
   ],
   imports: [
     BrowserModule,

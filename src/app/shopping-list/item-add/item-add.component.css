@@ -1,0 +1,8 @@
+.item-add{
+    padding-top: 30px;
+    text-align: center;
+    color: green;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: all 1s;
+}
