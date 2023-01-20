@@ -10,10 +10,6 @@ import { Recipe } from '../../recipe.model';
 export class RecipeItemComponent{
   @Input('item') receita!: Recipe;
 
-  constructor(private recipeService: RecipeService){}
-
-  onRecipeClick(){
-    this.recipeService.recipeSelected.emit(this.receita);
-  }
+  @Input() index!: number;
 
 }

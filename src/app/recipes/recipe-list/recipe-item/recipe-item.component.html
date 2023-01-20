@@ -1,5 +1,5 @@
-<div class="recipe-item" >
-    <a class="no-deco recipe-item" (click)="onRecipeClick()">
+<div class="recipe-item" routerLinkActive="active-border">
+    <a class="no-deco" [routerLink]="[index]">
         <div class="p-2 receita">
             <h4 class="recipe-title">
                 Receita de {{receita.name}}
