@@ -37,4 +37,8 @@ import { Recipe } from '../recipe.model';
     this.router.navigate(['edit'], {relativeTo: this.route});
   }
 
+  deleteRecipe(){
+    this.recipeService.deleteRecipe(this.index);
+    this.router.navigate(['/receitas']);
+  }
 }

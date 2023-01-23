@@ -3,6 +3,7 @@
     --nav-bg: #0d0d0d;
     --hover-link: #2c2c2c;
     --active-color: #6601ca;
+    --active-disabled-color: #46018b;
     --active-color-lg: #8000ff;
     --txt-color: #eee;
     --nav-hover: #161616;
@@ -46,6 +47,15 @@ body{
     padding: 8px;
     border-radius: 8px;
     transition: all .5s;
+}
+
+.button-active:disabled{
+    color: gray;
+    background-color: var(--active-disabled-color);
+}
+
+.button-active:disabled:hover{
+    background-color: var(--active-disabled-color);
 }
 
 .button-active:hover{
@@ -156,6 +166,5 @@ li{
 }
 
 .icon-link{
-    vertical-align:middle;
-    margin-right: 5px;
+    vertical-align: middle;
 }

@@ -9,6 +9,14 @@
     background-color: var(--nav-bg);
 }
 
-.img-input{
-    overflow: hidden;
+.text-underline{
+    text-decoration: underline;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border: 1px solid #ff5d5d;
+}
+
+.border-active{
+    border: solid 1px var(--active-color);
 }

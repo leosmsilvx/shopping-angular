@@ -1,27 +1,53 @@
 <div class="edit-list">
     <div class="edit-title">
-        <p>Editar receita</p>
+        <p>{{ editMode ? 'Editar' : 'Nova'}} receita</p>
     </div>
     <div class="edit-camps">
-        <form (ngSubmit)="onSubmit()">
+        <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
             <div class="form-group">
                 <label for="name">Título:</label>
-                <input class="lg-bg-form form-control shadow-none" type="text" name="name" id="name" placeholder="Título da receita">
+                <input class="lg-bg-form form-control shadow-none" type="text" formControlName="name" id="name" placeholder="Título da receita">
             </div>
-            <div class="form-group">
-                <label for="name" class="img-label">Imagem:</label>
-                <input class="lg-bg-form form-control shadow-none img-input" type="file" name="name" id="name" placeholder="Título da receita">
+            <div class="form-group mt-3">
+                <label for="imgPath" class="img-label">Imagem:</label>
+                <input class="lg-bg-form form-control shadow-none" type="text" formControlName="imgPath" id="imgPath" placeholder="Link da imagem" #imagePath>
             </div>
-            <div class="form-group">
-                <label for="desc">Descrição:</label>    
-                <textarea class="lg-bg-form form-control shadow-none" type="text" name="desc" id="desc" placeholder="Descrição da receita" rows="3"></textarea>
+            <div class="preview-img text-center mt-2">
+                <img class="rounded-3" [src]="imagePath.value" height="140px" width="170px" *ngIf="imagePath.value">
             </div>
-            <div class="ingredients-list">
-                <!-- fazer a função de adicionar ingredients na receita -->
+            <div class="form-group mt-1">
+                <label for="desc">Descrição:</label>
+                <textarea class="lg-bg-form form-control shadow-none" type="text" formControlName="description" id="description" placeholder="Descrição da receita" rows="4"></textarea>
             </div>
-        </form>   
-        <div class="edit-buttons text-end">
-            <button class="button-active" type="submit">Adicionar Receita</button>
-        </div>     
+            <div class="ingredients mt-4">
+                <div class="ingredient-form" formArrayName="ingredients">
+                    <h5 class="text-underline">Ingredientes</h5>
+                    <div class="row col-12 mt-2" *ngFor="let ingredientCtrl of getControls(); let i = index" [formGroupName]="i">
+                        <div class="col-8">
+                            <label for="ingredientName">Ingrediente:</label>
+                            <input type="text" formControlName="name" id="ingredientName" class="form-control lg-bg-form shadow-none">
+                        </div>
+                        <div class="col-3">
+                            <label for="ingredientAmount">Quantidade:</label>
+                            <input type="number" formControlName="amount" id="ingredientAmount" class="form-control lg-bg-form shadow-none">
+                        </div>
+                        <div class="col-1">
+                            <label for="ingredientAmount">&nbsp;</label>
+                            <button type="button" class="btn btn-danger" (click)="onDeleteIngredient(i)">
+                                <span class="material-symbols-outlined icon-link">
+                                    delete_forever
+                                    </span>
+                            </button>
+                        </div>
+                    </div>        
+                </div>
+                <button class="btn btn-success mt-4" type="button" (click)="onAddIngredient()">Adicionar Ingrediente</button>                           
+            </div>
+            <div class="edit-buttons text-end">   
+                <hr>                     
+                <button *ngIf="editMode" class="button-danger mx-2" type="button" (click)="onCancel()">Cancelar</button>  
+                <button class="button-active" type="submit" [disabled]="!recipeForm.valid">{{ editMode ? 'Editar' : 'Adicionar'}} Receita</button>
+            </div>
+        </form>       
     </div>
 </div>

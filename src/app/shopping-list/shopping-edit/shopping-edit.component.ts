@@ -10,7 +10,7 @@ import { Ingredient } from 'src/app/shared/ingredient.model';
   styleUrls: ['./shopping-edit.component.css']
 })
 export class ShoppingEditComponent implements OnInit, OnDestroy{
-  subscription!: Subscription;
+  subscription: Subscription = this.shoppingService.startedEditing.subscribe();
   editMode = false;
   editItemIndex!: number;
   editItem!: Ingredient;
