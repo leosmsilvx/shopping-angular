@@ -25,11 +25,11 @@
                     <div class="row col-12 mt-2" *ngFor="let ingredientCtrl of getControls(); let i = index" [formGroupName]="i">
                         <div class="col-8">
                             <label for="ingredientName">Ingrediente:</label>
-                            <input type="text" formControlName="name" id="ingredientName" class="form-control lg-bg-form shadow-none">
+                            <input type="text" formControlName="name" id="ingredientName" class="form-control lg-bg-form shadow-none" placeholder="Bananas">
                         </div>
                         <div class="col-3">
                             <label for="ingredientAmount">Quantidade:</label>
-                            <input type="number" formControlName="amount" id="ingredientAmount" class="form-control lg-bg-form shadow-none">
+                            <input type="number" formControlName="amount" id="ingredientAmount" class="form-control lg-bg-form shadow-none" placeholder="3">
                         </div>
                         <div class="col-1">
                             <label for="ingredientAmount">&nbsp;</label>

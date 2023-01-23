@@ -38,8 +38,6 @@ export class RecipeEditComponent implements OnInit{
     let description = '';
     let recipeIngredients = new FormArray([]);
 
-
-
     if(this.editMode){
       const recipe = this.recipeService.getRecipeIndex(this.index);
       name = recipe.name;
@@ -55,6 +53,14 @@ export class RecipeEditComponent implements OnInit{
           );
         }
       }
+    }
+    else{
+      (recipeIngredients as unknown as FormArray).push(
+        new FormGroup ({
+          'name': new FormControl(null, Validators.required),
+          'amount': new FormControl(null,[Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)])
+        })
+      );
     }
 
     this.recipeForm = new FormGroup({
