@@ -11,7 +11,7 @@ export class ItemAddComponent implements OnInit {
   ngOnInit(){
     setTimeout(() => {
       this.msgItemAddRef.nativeElement.style.opacity = 0;
-    }, 2500);    
+    }, 2500); 
   }
 
 }

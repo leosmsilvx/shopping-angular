@@ -5,4 +5,5 @@
     text-decoration: underline;
     font-weight: 500;
     transition: all 1s;
+    cursor: default;
 }

@@ -3,9 +3,25 @@
         <p>Editar receita</p>
     </div>
     <div class="edit-camps">
-
-    </div>
-    <div class="edit-buttons">
-        
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Título:</label>
+                <input class="lg-bg-form form-control shadow-none" type="text" name="name" id="name" placeholder="Título da receita">
+            </div>
+            <div class="form-group">
+                <label for="name" class="img-label">Imagem:</label>
+                <input class="lg-bg-form form-control shadow-none img-input" type="file" name="name" id="name" placeholder="Título da receita">
+            </div>
+            <div class="form-group">
+                <label for="desc">Descrição:</label>    
+                <textarea class="lg-bg-form form-control shadow-none" type="text" name="desc" id="desc" placeholder="Descrição da receita" rows="3"></textarea>
+            </div>
+            <div class="ingredients-list">
+                <!-- fazer a função de adicionar ingredients na receita -->
+            </div>
+        </form>   
+        <div class="edit-buttons text-end">
+            <button class="button-active" type="submit">Adicionar Receita</button>
+        </div>     
     </div>
 </div>

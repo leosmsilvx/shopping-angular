@@ -26,4 +26,8 @@ export class RecipeEditComponent implements OnInit{
     )
   }
 
+  onSubmit(){
+    
+  }
+
 }

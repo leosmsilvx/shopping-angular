@@ -1,0 +1,19 @@
+.button-clear{
+    background-color: transparent;
+    border: 0;
+    color: white;
+}
+
+.span-hover{    
+    border-radius: 50%;
+    padding: 4px;
+}
+
+.span-hover:hover{
+    background-color: var(--hover-link)
+}
+
+.flex-buttons{
+    display: flex;
+    justify-content: space-between;
+}

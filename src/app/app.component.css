@@ -7,10 +7,14 @@
 }
 
 .text-footer{
+    padding-top: 4px;
     text-decoration: none;
     font-size: 12px;
     font-family: system-ui;
     color: gray;
+}
+.text-footer:hover{
+    color: var(--active-color);
 }
 
 .content {

@@ -94,6 +94,18 @@ body{
     background-color: var(--blue-color);
 }
 
+.lg-bg-form{
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border-color: var(--hover-link);
+}
+
+.lg-bg-form:focus{
+    background-color: var(--nav-hover);
+    border-color: var(--hover-link);
+    color: var(--text-color);
+}
+
 .bg-form{
     color: var(--text-color);
     background-color: var(--nav-bg);
