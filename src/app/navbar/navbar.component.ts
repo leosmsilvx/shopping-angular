@@ -23,7 +23,6 @@ export class NavbarComponent {
   }
 
   onLogout(){
-    console.log('entrie');
     this.authService.logout();
   }
 

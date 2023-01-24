@@ -8,9 +8,10 @@ import { AuthService } from "../services/auth.service";
 export class DataStorageService{
     constructor(private http: HttpClient, private recipeService: RecipeService, private authService: AuthService) {}
 
-    storeRecipes(){
+    storeRecipes(){        
+        const token = this.authService.getToken();
         return this.http.put(
-            "https://shopping-angular-8d3da-default-rtdb.firebaseio.com/recipes.json",
+            "https://shopping-angular-8d3da-default-rtdb.firebaseio.com/recipes.json?auth="+token,
             this.recipeService.getRecipes()
         );
     }
