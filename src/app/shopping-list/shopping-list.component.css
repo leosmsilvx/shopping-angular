@@ -8,3 +8,9 @@
 .ingrediente-item:hover{
     background-color: var(--nav-hover);
 }
+
+.text-underline{
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: underline;
+}

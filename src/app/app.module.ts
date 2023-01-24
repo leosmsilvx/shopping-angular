@@ -15,7 +15,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NoRecipeSelectedComponent } from './recipes/no-recipe-selected/no-recipe-selected.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
-import { ItemAddComponent } from './shopping-list/item-add/item-add.component';
 import { RecipeService } from './services/recipe.service';
 
 @NgModule({
@@ -31,7 +30,6 @@ import { RecipeService } from './services/recipe.service';
     NotFoundComponent,
     NoRecipeSelectedComponent,
     RecipeEditComponent,
-    ItemAddComponent,
   ],
   imports: [
     BrowserModule,

@@ -36,15 +36,16 @@ export class ShoppingService{
                 if(this.ingredients[j].name === ingredientsOut[i].name){
                     this.ingredients[j].amount = this.ingredients[j].amount + ingredientsOut[i].amount;
                     itemIn = true;
-                    console.log(ingredientsOut[i]);
                 }
             }
-            if(!itemIn){                  
-                this.ingredients.push(ingredientsOut[i]);
+            if(!itemIn){ 
+                var newName = ingredientsOut[i].name;
+                var newAmount = ingredientsOut[i].amount
+                var newIngredient = new Ingredient(newName, newAmount);
+                this.ingredients.push(newIngredient);
             }
             
         }
-        
         this.ingredientsChanged.next(this.ingredients.slice());
     }
 

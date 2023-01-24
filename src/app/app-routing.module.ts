@@ -6,7 +6,6 @@ import { NoRecipeSelectedComponent } from "./recipes/no-recipe-selected/no-recip
 import { RecipeDetailComponent } from "./recipes/recipe-detail/recipe-detail.component";
 import { RecipeEditComponent } from "./recipes/recipe-edit/recipe-edit.component";
 import { RecipesComponent } from "./recipes/recipes.component";
-import { ItemAddComponent } from "./shopping-list/item-add/item-add.component";
 import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 
 const appRoutes: Routes = [
@@ -17,9 +16,7 @@ const appRoutes: Routes = [
         {path: ':id', component: RecipeDetailComponent},
         {path: ':id/edit', component: RecipeEditComponent}
     ]},
-    {path: 'lista', component: ShoppingListComponent, children: [
-        {path: 'item-adicionado', component: ItemAddComponent}
-    ]},
+    {path: 'lista', component: ShoppingListComponent},
     {path: 'not-found', component: NotFoundComponent},
     {path: '**', redirectTo: '/not-found'}
 ];

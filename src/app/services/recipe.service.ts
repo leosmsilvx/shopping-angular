@@ -1,4 +1,3 @@
-import { EventEmitter } from "@angular/core";
 import { Subject } from "rxjs";
 import { Recipe } from "../recipes/recipe.model";
 import { Ingredient } from "../shared/ingredient.model";
@@ -22,8 +21,7 @@ export class RecipeService{
 
     getRecipeIndex(index: number){
         return this.recipes[index];
-    }
-    
+    }    
 
     addRecipes(recipe: Recipe){
         this.recipes.push(recipe);
