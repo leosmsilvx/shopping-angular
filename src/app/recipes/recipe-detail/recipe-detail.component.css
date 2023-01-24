@@ -28,3 +28,15 @@ h3{
     justify-content: space-between;
     align-items: baseline;
 }
+
+li.li-list{
+    border-bottom: solid 1px transparent;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+li.li-separation{
+    border-bottom: solid 1px gray;
+    border-radius: 5px;
+    padding: 10px;
+}

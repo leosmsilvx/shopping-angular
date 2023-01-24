@@ -1,0 +1,28 @@
+<form (ngSubmit)="onCadastrar(f)" #f="ngForm">
+    <div class="login-container">
+        <div class="login-bg">
+            <div class="camps">
+                <p class="title-camp">Cadastrar-se</p>
+                <div class="email-camp">
+                    <label for="email">Email:</label>
+                    <input class="login-form form-control shadow-none" type="text" name="email" id="email" ngModel required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #emailRef="ngModel" placeholder="email@exemplo.com">
+                    <div class="invalid-email">                        
+                        <a style="cursor: default;">&nbsp;</a>
+                        <a *ngIf="!emailRef.valid && emailRef.touched">Email invalido.</a>                        
+                    </div>
+                </div>
+                <div class="password-camp">
+                    <label for="senha">Senha:</label>
+                    <input class="login-form form-control shadow-none" type="password" name="senha" id="senha" ngModel minlength="6" required #password="ngModel">                    
+                    <div  class="invalid-password">
+                        <a style="cursor: default;">&nbsp;</a>
+                        <a *ngIf="!password.valid && password.touched">A senha precisa ter no mínimo 6 caracteres.</a>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="button-active" type="submit" [disabled]="!f.valid">Cadastrar</button>
+            </div>
+        </div>        
+    </div>
+</form>

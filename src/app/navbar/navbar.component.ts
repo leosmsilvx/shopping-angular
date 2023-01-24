@@ -1,4 +1,5 @@
 import { Component  } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 import { DataStorageService } from '../shared/data-storage.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { DataStorageService } from '../shared/data-storage.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor(private dataStorageService: DataStorageService){}
+  constructor(private dataStorageService: DataStorageService, public authService: AuthService){}
 
   onSaveData(){
     this.dataStorageService.storeRecipes().subscribe(
@@ -19,6 +20,11 @@ export class NavbarComponent {
 
   onFetchData(){
     this.dataStorageService.getRecipes();
+  }
+
+  onLogout(){
+    console.log('entrie');
+    this.authService.logout();
   }
 
 }

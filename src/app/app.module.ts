@@ -18,6 +18,10 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { RecipeService } from './services/recipe.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DataStorageService } from './shared/data-storage.service';
+import { LoginComponent } from './auth/login/login.component';
+import { CadastroComponent } from './auth/cadastro/cadastro.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './auth/auth-guard-service';
 
 @NgModule({
   declarations: [
@@ -32,15 +36,17 @@ import { DataStorageService } from './shared/data-storage.service';
     NotFoundComponent,
     NoRecipeSelectedComponent,
     RecipeEditComponent,
+    LoginComponent,
+    CadastroComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule 
   ],
-  providers: [ShoppingService, RecipeService, DataStorageService],
+  providers: [ShoppingService, RecipeService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,68 @@
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.login-bg{    
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: var(--nav-bg);
+    border: solid 1px #5c5c5c;
+}
+
+.login-form{
+    background-color: var(--hover-link);
+    border: solid 1px var(--nav-bg);
+    color: white;
+}
+
+.login-form:focus{
+    border: solid 1px var(--active-color);
+}
+
+.buttons{
+    align-self: end;
+}
+
+.camps{
+    display: flex;
+    flex-direction: column;
+}
+
+.email-camp{    
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.password-camp{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+.invalid-email{
+    font-size: 12px;
+    color: red;
+}
+
+.invalid-password{
+    
+    font-size: 12px;
+    color: red;
+}
+
+.title-camp{
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: underline;
+}
