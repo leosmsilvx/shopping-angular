@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component  } from '@angular/core';
+import { DataStorageService } from '../shared/data-storage.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,15 +7,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  //routing from ts
-  constructor(private router: Router){}
-  
-  functionToLoad(){
-    //funções legais no .router
-    //Ex: isActive
-    this.router.navigate(['/path'])
-    //Vai para /path/id/edit?parametro=10#idUrl
-    //this.router.navigate(['/path', 'id', 'edit'], {queryParams: {parametro: '10'}, fragment: 'idUrl'})
+  constructor(private dataStorageService: DataStorageService){}
+
+  onSaveData(){
+    this.dataStorageService.storeRecipes().subscribe(
+      (response: any) => {
+        console.log(response);
+      }
+    );
+  }
+
+  onFetchData(){
+    this.dataStorageService.getRecipes();
   }
 
 }
