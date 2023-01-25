@@ -10,18 +10,6 @@ import { DataStorageService } from '../shared/data-storage.service';
 export class NavbarComponent {
   constructor(private dataStorageService: DataStorageService, public authService: AuthService){}
 
-  onSaveData(){
-    this.dataStorageService.storeRecipes().subscribe(
-      (response: any) => {
-        console.log(response);
-      }
-    );
-  }
-
-  onFetchData(){
-    this.dataStorageService.getRecipes();
-  }
-
   onLogout(){
     this.authService.logout();
   }

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -16,7 +17,7 @@ export class RecipeEditComponent implements OnInit{
 
   recipeForm!: FormGroup;
 
-  constructor(private route: ActivatedRoute, private recipeService: RecipeService, private router: Router){}
+  constructor(private route: ActivatedRoute, private recipeService: RecipeService, private router: Router, private dataStorageService: DataStorageService){}
 
   onCancel(){
     this.router.navigate(['../'], {relativeTo: this.route});
@@ -77,6 +78,12 @@ export class RecipeEditComponent implements OnInit{
     } else{
       this.recipeService.addRecipes(this.recipeForm.value);
     }
+
+    this.dataStorageService.storeRecipes().subscribe(
+      (response: any) => {
+        console.log(response);
+      }
+    );
 
     this.onCancel();
   }

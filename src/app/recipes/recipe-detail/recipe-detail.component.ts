@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { ShoppingService } from 'src/app/services/shopping.service';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { Recipe } from '../recipe.model';
 
@@ -17,7 +18,8 @@ import { Recipe } from '../recipe.model';
   constructor(private shoppingService: ShoppingService,
               private route: ActivatedRoute,
               private recipeService: RecipeService,
-              private router: Router) {
+              private router: Router,
+              private dataStorageService: DataStorageService) {
   }
 
   ngOnInit(){
@@ -39,6 +41,12 @@ import { Recipe } from '../recipe.model';
 
   deleteRecipe(){
     this.recipeService.deleteRecipe(this.index);
+
+    this.dataStorageService.storeRecipes().subscribe(
+      (response: any) => {
+        console.log(response);
+      }
+    );
     this.router.navigate(['/receitas']);
   }
 }
