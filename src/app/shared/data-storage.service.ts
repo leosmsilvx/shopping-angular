@@ -19,12 +19,10 @@ export class DataStorageService{
     getRecipes(){
         const token = this.authService.getToken();
 
-        this.http.get("https://shopping-angular-8d3da-default-rtdb.firebaseio.com/recipes.json?auth=" + token)
+        this.http.get<Recipe[]>("https://shopping-angular-8d3da-default-rtdb.firebaseio.com/recipes.json?auth=" + token)
         .subscribe(
-            (response: any) =>{
-                const recipeJson = JSON.stringify(response);
-                const recipes = JSON.parse(recipeJson);
-                this.recipeService.setRecipes(recipes);
+            (receitas) =>{
+                this.recipeService.setRecipes(receitas);
             }
         );
     }
