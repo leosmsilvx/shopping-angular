@@ -32,6 +32,7 @@ export class ShoppingService{
     addIngredients(ingredientsOut: Ingredient[]){
         var itemIn = false;
         for(let i in ingredientsOut){
+            itemIn = false;
             for(let j in this.ingredients){
                 if(this.ingredients[j].name === ingredientsOut[i].name){
                     this.ingredients[j].amount = this.ingredients[j].amount + ingredientsOut[i].amount;
