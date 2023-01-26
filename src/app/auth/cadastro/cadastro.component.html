@@ -19,7 +19,9 @@
                         <a *ngIf="!password.valid && password.touched">A senha precisa ter no mínimo 6 caracteres.</a>
                     </div>
                 </div>
-            </div>
+            </div>           
+            <a *ngIf="showMsg.length == 0">&nbsp;</a>
+            <a class="text-center msgerror" [ngClass]="classStyle">{{showMsg}}</a>
             <div class="buttons">
                 <button class="button-active" type="submit" [disabled]="!f.valid">Cadastrar</button>
             </div>

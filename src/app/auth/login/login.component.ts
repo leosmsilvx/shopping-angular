@@ -11,10 +11,24 @@ export class LoginComponent {
 
   constructor(private authService: AuthService){}
 
-  onLogin(form: NgForm){    
+  msgError!: String;
+  showMsg: String = '';
+
+  async onLogin(form: NgForm){    
     const email = form.value.email;
     const senha = form.value.senha;
     
-    this.authService.logarUsuario(email, senha);
+    await this.authService.logarUsuario(email, senha).then(error => this.msgError = error);
+
+    if(this.msgError == 'FirebaseError: Firebase: Error (auth/user-not-found).'){
+      this.showMsg = 'Usuário não encontrado.';
+    }
+    else if(this.msgError == 'FirebaseError: Firebase: Error (auth/wrong-password).'){
+      this.showMsg = 'Login ou senha incorretos.';
+    }
+    else{
+      this.showMsg = 'Ocorreu um erro ao tentar logar, tente novamente mais tarde.';
+    }
+
   }
 }

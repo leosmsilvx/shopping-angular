@@ -1,3 +1,4 @@
+
 <form (ngSubmit)="onLogin(f)" #f="ngForm">
     <div class="login-container">
         <div class="login-bg">
@@ -19,7 +20,8 @@
                         <a *ngIf="!password.valid && password.touched">A senha precisa ter no mínimo 6 caracteres.</a>
                     </div>
                 </div>
-            </div>
+            </div>            
+            <a class="text-danger text-center msgerror">{{showMsg}} &nbsp;</a>
             <div class="buttons">
                 <button class="button-active" type="submit" [disabled]="!f.valid">Login</button>
             </div>

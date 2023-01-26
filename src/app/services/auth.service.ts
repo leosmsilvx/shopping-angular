@@ -5,35 +5,46 @@ import * as firebase from 'firebase/auth';
 @Injectable()
 export class AuthService{
     token!: string | null;
+    errorMsg!: String;
 
     constructor(private router: Router){}
 
-    cadastrarUsuario(email: string, senha: string){
+    async cadastrarUsuario(email: string, senha: string){
         const auth = firebase.getAuth();
-        firebase.createUserWithEmailAndPassword(auth, email, senha)
+        this.errorMsg = '';
+        await firebase.createUserWithEmailAndPassword(auth, email, senha)
             .catch(
-                error => console.log(error)
+                error =>{
+                    // console.log(error);
+                    this.errorMsg = error;
+                } 
             )
+            return this.errorMsg;
     }
 
-    logarUsuario(email: string, senha: string){
+    async logarUsuario(email: string, senha: string){
         const auth = firebase.getAuth();
-        firebase.signInWithEmailAndPassword(auth, email, senha)
+        this.errorMsg = '';
+        await firebase.signInWithEmailAndPassword(auth, email, senha)
             .then(
                 response => {
                     auth.currentUser?.getIdToken()
                     .then(
                         (token: string) => {
                             this.token = token;
-                            this.router.navigate(['/receitas']);
+                            this.router.navigate(['/receitas']);                            
                         }
                     )
                 }                
 
             )
             .catch(
-                error => console.log(error)
-            )
+                error => {
+                    console.log(error);
+                    this.errorMsg = error;
+                }
+            );
+            return this.errorMsg;
     }
 
     getToken(){
