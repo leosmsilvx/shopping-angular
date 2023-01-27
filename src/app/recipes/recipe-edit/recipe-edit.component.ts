@@ -79,11 +79,7 @@ export class RecipeEditComponent implements OnInit{
       this.recipeService.addRecipes(this.recipeForm.value);
     }
 
-    this.dataStorageService.storeRecipes().subscribe(
-      (response: any) => {
-        console.log(response);
-      }
-    );
+    this.dataStorageService.storeRecipes().subscribe();
 
     this.onCancel();
   }

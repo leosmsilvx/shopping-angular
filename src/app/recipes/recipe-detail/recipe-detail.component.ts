@@ -33,11 +33,7 @@ import { Recipe } from '../recipe.model';
 
   addOnSList(ingredients: Ingredient[]){
     this.shoppingService.addIngredients(ingredients);
-    this.dataStorageService.storeIngredients().subscribe(
-      (response: any) => {
-        console.log(response);
-      }
-    );
+    this.dataStorageService.storeIngredients().subscribe();
   }
 
   editRecipe(){
@@ -47,11 +43,7 @@ import { Recipe } from '../recipe.model';
   deleteRecipe(){
     this.recipeService.deleteRecipe(this.index);
 
-    this.dataStorageService.storeRecipes().subscribe(
-      (response: any) => {
-        console.log(response);
-      }
-    );
+    this.dataStorageService.storeRecipes().subscribe();
     this.router.navigate(['/receitas']);
   }
 }

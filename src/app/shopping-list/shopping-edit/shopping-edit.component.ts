@@ -48,11 +48,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy{
       this.shoppingService.addIngredient(newIngredient);
     }
 
-    this.dataStorage.storeIngredients().subscribe(
-      (response: any) => {
-        console.log(response);
-      }
-    );;
+    this.dataStorage.storeIngredients().subscribe();
 
     this.editMode = false;
     form.reset();
@@ -84,20 +80,12 @@ export class ShoppingEditComponent implements OnInit, OnDestroy{
 
   clearIngredientList(){
     this.shoppingService.clearIngredientList();
-    this.dataStorage.storeIngredients().subscribe(
-      (response: any) => {
-        console.log(response);
-      }
-    );
+    this.dataStorage.storeIngredients().subscribe();
   }
 
   onDeleteIngredient(){
     this.shoppingService.deleteIngredient(this.editItemIndex);
-    this.dataStorage.storeIngredients().subscribe(
-      (response: any) => {
-        console.log(response);
-      }
-    );
+    this.dataStorage.storeIngredients().subscribe();
     this.onClear();
   }
 

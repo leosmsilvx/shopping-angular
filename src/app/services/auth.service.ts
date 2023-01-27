@@ -15,7 +15,6 @@ export class AuthService{
         await firebase.createUserWithEmailAndPassword(auth, email, senha)
             .catch(
                 error =>{
-                    // console.log(error);
                     this.errorMsg = error;
                 } 
             )
@@ -40,7 +39,6 @@ export class AuthService{
             )
             .catch(
                 error => {
-                    console.log(error);
                     this.errorMsg = error;
                 }
             );
