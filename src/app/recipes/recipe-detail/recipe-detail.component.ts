@@ -33,6 +33,11 @@ import { Recipe } from '../recipe.model';
 
   addOnSList(ingredients: Ingredient[]){
     this.shoppingService.addIngredients(ingredients);
+    this.dataStorageService.storeIngredients().subscribe(
+      (response: any) => {
+        console.log(response);
+      }
+    );
   }
 
   editRecipe(){

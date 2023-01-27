@@ -3,7 +3,23 @@
         <div class="login-bg">
             <div class="camps">
                 <p class="title-camp">Cadastrar-se</p>
-                <div class="email-camp">
+                <div class="camp">
+                    <label for="user">Usuario:</label>
+                    <input class="login-form form-control shadow-none" type="text" name="user" id="user" ngModel required #userRef="ngModel" placeholder="Exemplo">
+                    <div class="invalid-email">                        
+                        <a style="cursor: default;">&nbsp;</a>
+                        <a *ngIf="!userRef.valid && userRef.touched">Usuario invalido.</a>                        
+                    </div>
+                </div>
+                <div class="camp">
+                    <label for="nome">Nome:</label>
+                    <input class="login-form form-control shadow-none" type="text" name="nome" id="nome" ngModel required #nomeRef="ngModel" placeholder="Seu nome">
+                    <div class="invalid-email">                        
+                        <a style="cursor: default;">&nbsp;</a>
+                        <a *ngIf="!nomeRef.valid && nomeRef.touched">Nome Invalido.</a>                        
+                    </div>
+                </div>
+                <div class="camp">
                     <label for="email">Email:</label>
                     <input class="login-form form-control shadow-none" type="text" name="email" id="email" ngModel required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #emailRef="ngModel" placeholder="email@exemplo.com">
                     <div class="invalid-email">                        
@@ -11,7 +27,7 @@
                         <a *ngIf="!emailRef.valid && emailRef.touched">Email invalido.</a>                        
                     </div>
                 </div>
-                <div class="password-camp">
+                <div class="camp">
                     <label for="senha">Senha:</label>
                     <input class="login-form form-control shadow-none" type="password" name="senha" id="senha" ngModel minlength="6" required #password="ngModel">                    
                     <div  class="invalid-password">

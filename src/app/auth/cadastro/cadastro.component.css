@@ -36,14 +36,8 @@
     flex-direction: column;
 }
 
-.email-camp{    
+.camp{    
     margin-top: 5px;
-    display: flex;
-    flex-direction: column;
-}
-
-.password-camp{
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
 }

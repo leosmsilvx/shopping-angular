@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ShoppingService } from 'src/app/services/shopping.service';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 
 @Component({
@@ -22,7 +23,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy{
 
   @ViewChild("f") shoppingForm!: NgForm;
 
-  constructor(private shoppingService: ShoppingService) {}  
+  constructor(private shoppingService: ShoppingService, private dataStorage: DataStorageService) {}  
 
   onSubmit(form: NgForm){
     // Sem necessidade dessa lógica mais
@@ -46,6 +47,13 @@ export class ShoppingEditComponent implements OnInit, OnDestroy{
     else{
       this.shoppingService.addIngredient(newIngredient);
     }
+
+    this.dataStorage.storeIngredients().subscribe(
+      (response: any) => {
+        console.log(response);
+      }
+    );;
+
     this.editMode = false;
     form.reset();
 
@@ -76,10 +84,20 @@ export class ShoppingEditComponent implements OnInit, OnDestroy{
 
   clearIngredientList(){
     this.shoppingService.clearIngredientList();
+    this.dataStorage.storeIngredients().subscribe(
+      (response: any) => {
+        console.log(response);
+      }
+    );
   }
 
   onDeleteIngredient(){
     this.shoppingService.deleteIngredient(this.editItemIndex);
+    this.dataStorage.storeIngredients().subscribe(
+      (response: any) => {
+        console.log(response);
+      }
+    );
     this.onClear();
   }
 

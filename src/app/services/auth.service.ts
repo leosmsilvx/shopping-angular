@@ -58,6 +58,11 @@ export class AuthService{
         return this.token;
     }
 
+    getUid(){
+        const auth = firebase.getAuth();
+        return auth.currentUser?.uid;
+    }
+
     isAuthenticated(){
         return this.token != null;
     }
